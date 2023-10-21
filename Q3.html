@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laptop Comparison</title>
+</head>
+<body>
+    <h1>Laptop Comparison</h1>
+    <p id="fastestLaptopDetails"></p>
+
+    <script>
+        let laptops = [
+            {
+                brand: "HP",
+                model: "Pavilion",
+                processor: "Intel Core i7",
+                ram: "16GB",
+                storage: "512GB SSD"
+            },
+            {
+                brand: "Dell",
+                model: "XPS",
+                processor: "Intel Core i9",
+                ram: "32GB",
+                storage: "1TB SSD"
+            },
+            {
+                brand: "Lenovo",
+                model: "ThinkPad",
+                processor: "AMD Ryzen 9",
+                ram: "16GB",
+                storage: "256GB SSD"
+            }
+        ];
+        function findFastestLaptop(laptops) {
+            let fastestLaptop = laptops[0];
+
+            for (let i = 1; i < laptops.length; i++) {
+                if (laptops[i].processor > fastestLaptop.processor && laptops[i].ram > fastestLaptop.ram) {
+                    fastestLaptop = laptops[i];
+                }
+            }
+            return fastestLaptop;
+        }
+        let fastestLaptop = findFastestLaptop(laptops);
+        let fastestLaptopDetailsElement = document.getElementById("fastestLaptopDetails");
+        fastestLaptopDetailsElement.textContent = `Fastest Laptop: Brand: ${fastestLaptop.brand}, Model: ${fastestLaptop.model}, Processor: ${fastestLaptop.processor}, RAM: ${fastestLaptop.ram}, Storage: ${fastestLaptop.storage}`;
+    </script>
+</body>
+</html>

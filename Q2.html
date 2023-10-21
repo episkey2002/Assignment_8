@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laptop Configuration</title>
+</head>
+<body>
+    <h1>Laptop Configuration</h1>
+    <p id="laptopDetails"></p>
+
+    <script>
+        let laptop = {
+            brand: "HP",
+            model: "Pavilion",
+            screenSize: "15.6 inches",
+            processor: "Intel Core i7",
+            ram: "16GB",
+            storage: "512GB SSD",
+
+            getConfig: function() {
+                return `Brand: ${this.brand}, Model: ${this.model}, Screen Size: ${this.screenSize}, Processor: ${this.processor}, RAM: ${this.ram}, Storage: ${this.storage}`;
+            }
+        };
+        let laptopDetailsElement = document.getElementById("laptopDetails");
+        laptopDetailsElement.textContent = laptop.getConfig();
+    </script>
+</body>
+</html>

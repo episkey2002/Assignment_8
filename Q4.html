@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks</title>
+</head>
+<body>
+    <h1>Student Marks</h1>
+    <p id="student1Marks"></p>
+    <p id="student2Marks"></p>
+
+    <script>
+        function Students(name, math, science, history) {
+            this.name = name;
+            this.math = math;
+            this.science = science;
+            this.history = history;
+        }
+        let student1 = new Students("Alice", 90, 85, 95);
+        let student2 = new Students("Bob", 78, 88, 92);
+
+        let student1MarksElement = document.getElementById("student1Marks");
+        student1MarksElement.textContent = `Student 1: ${student1.name} - Math: ${student1.math}, Science: ${student1.science}, History: ${student1.history}`;
+
+        let student2MarksElement = document.getElementById("student2Marks");
+        student2MarksElement.textContent = `Student 2: ${student2.name} - Math: ${student2.math}, Science: ${student2.science}, History: ${student2.history}`;
+    </script>
+</body>
+</html>

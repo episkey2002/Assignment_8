@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plant Operations</title>
+</head>
+<body>
+    <h1>Plant Operations</h1>
+
+    <p id="plantList"></p>
+    <p id="result"></p>
+
+    <script>
+        // Define an array of plant names
+        let plantNames = ["Rose", "Tulip", "Lily", "Sunflower"];
+
+        // Add a new plant name to the array
+        let newPlant = "Daisy";
+        plantNames.push(newPlant);
+
+        // Remove the newly added plant name from the array
+        let removedPlant = plantNames.pop();
+
+        // Display the updated array
+        let plantListElement = document.getElementById("plantList");
+        plantListElement.textContent = "Plants in the array: " + plantNames.join(", ");
+
+        // Loop through the array and print the name of each plant
+        let resultElement = document.getElementById("result");
+        resultElement.textContent = "Plant Names:";
+        plantNames.forEach(function(plant) {
+            resultElement.textContent += "\n" + plant;
+        });
+    </script>
+</body>
+</html>
